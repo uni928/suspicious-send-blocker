@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Suspicious Send Blocker",
+  "version": "0.1.0",
+  "description": "Blocks suspicious submissions/requests on visited sites.",
+  "permissions": ["storage", "declarativeNetRequest", "declarativeNetRequestWithHostAccess"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["heuristics.js", "content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

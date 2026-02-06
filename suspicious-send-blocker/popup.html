@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body { font-family: system-ui, sans-serif; width: 420px; margin: 12px; }
+    .row { display:flex; gap:8px; margin: 8px 0; }
+    input { flex:1; padding:6px; }
+    button { padding:6px 10px; }
+    .item { border:1px solid #ddd; border-radius:8px; padding:8px; margin:8px 0; }
+    .small { color:#666; font-size:12px; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <h3>Suspicious Send Blocker</h3>
+
+  <div class="row">
+    <input id="allowHost" placeholder="ホワイトリストに追加する host（例: api.example.com）">
+    <button id="add">追加</button>
+  </div>
+
+  <div class="row">
+    <button id="clear">履歴クリア</button>
+  </div>
+
+  <h4>最近のブロック</h4>
+  <div id="list"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
